@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+    function Vehicle(){
+    var id=0;
+    return function newVehicle(type){
+     id++;
+     return "Created a new "+type+" with id "+id;
+    }
+}
+
+var vehicleFactory=Vehicle();
+function createVehicle(){
+    var vehicle=document.getElementById("vehicleType").value;
+    alert(vehicleFactory(vehicle));
+}
+    </script>
+</head>
+<body>
+    type of vehicle:<input type="text" id="vehicleType"/><br/>
+    <input type="button" onclick="createVehicle()" value="Create"/>
+</body>
+</html>
